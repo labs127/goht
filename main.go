@@ -1,4 +1,4 @@
-package main
+package goht
 
 import (
 	"flag"
@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	yaml = flag.String("data", "", "Location data test yaml file")
+	data = flag.String("data", "", "Location data test yaml file")
 )
 
 func init() {
@@ -14,5 +14,5 @@ func init() {
 }
 
 func main() {
-	fmt.Println(*yaml)
+	fmt.Println(*data)
 }
