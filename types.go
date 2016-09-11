@@ -25,15 +25,16 @@ tests:
 */
 
 //Payload used to mapping between key string and their value (interface)
+//Used to set request payload variables
 type Payload map[string]interface{}
 
 //StatusCode used to indicate http status code
 type StatusCode int
 
-//Workers used to indicate how many concurrent workers should be working together
+//Workers used to indicate how many concurrent workers should be used
 type Workers int
 
-//Endpoint used to set test data
+//Endpoint used to set main test data
 type Endpoint struct {
 	URL         string     `yaml:"url"`
 	Method      string     `yaml:"method"`
@@ -48,7 +49,7 @@ type Tests struct {
 	Workers Workers  `yaml:"workers"`
 }
 
-//Data is a valid test data format parsed from yaml
+//Data is main data structure contains name, pre_test and tests
 type Data struct {
 	Name    string   `yaml:"test_name"`
 	PreTest Endpoint `yaml:"pre_test"`
